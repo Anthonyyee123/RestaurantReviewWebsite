@@ -19,7 +19,7 @@ function getUserData() {
 
 function login() {
     var loginUser = new XMLHttpRequest();
-    loginUser.open("POST", "http://127.0.0.1:8080/user/login", true);
+    loginUser.open("POST", "http://ec2-54-167-183-158.compute-1.amazonaws.com:8080/user/login", true);
     loginUser.setRequestHeader("Content-Type", "application/json");
     loginUser.onload=function() {
 
