@@ -1,0 +1,24 @@
+
+    <div class="modal fade" id="viewComments" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-center">
+                    <p class="modal-title text-light" id="review">Restaurant reviews</p>
+                    <button type="button" class="close bg-light" style="background-color: transparent;" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
+                    
+                </div>
+                <div class="modal-body">
+                <div id="emptyComment" style="padding-bottom: 20px;"></div>
+                <button type="button" class="btn btn-primary" id="newComment" style="float: right;" data-toggle="modal" data-target="#postComments" data-dismiss="modal" onClick="newComment()">Write a Review</button>
+                <div class="row px-5" id="commentBody"></div>
+                <div class="modal-footer">
+                    <button type="button" style="float: right" class="btn btn-secondary bg-dark" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div w3-include-html="editComment.html" ></div>
+    <div w3-include-html="postComment.html" ></div>

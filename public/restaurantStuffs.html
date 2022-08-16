@@ -1,0 +1,57 @@
+
+
+    <div class="modal fade" id="viewRestInfo" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-center">
+                    <h5 class="modal-title text-light" id="nameRestaurant"></h5>
+                    <button type="button" class="close bg-light" style="background-color: transparent;" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
+                    
+                </div>
+                <div class="modal-body">
+                    <div class="col-lg-12">
+                        <table class="table table-hover table-responsive table-sm">
+                            <tr>
+                                <td><img class="img-fluid img-teaser" style = "height: 200px; padding-bottom: 10px;" id="teaser"></td>
+                                <!-- <td colspan="2"><button type="button" class="btn btn-warning" style="float: right;" id="buy" data-toggle="modal" data-target="#viewComments" data-dismiss="modal" item="' + count + '" onClick="showRestaurantComments(this)">See all reviews</button></td> -->
+                            </tr>
+                            <tr>
+                                <td><h6>Address: </h6></td>
+                                <td id="address"></td>
+                            </tr>
+                            <tr>
+                                <td><h6>Opening Hours: </h6></td>
+                                <td id="openingHours"></td>
+                            </tr>
+                            <tr>
+                                <td><h6>Phone: </h6></td>
+                                <td id="phone"></td>
+                            </tr>
+                            <tr>
+                                <td><h6>Cuisine: </h6></td>
+                                <td id="cuisine"></td>
+                            </tr>
+                            <tr>
+                                <td><h6>Price: </h6></td>
+                                <td id="price"></td>
+                            </tr>
+                            <tr>
+                                <td><h6>Find out more at: </h6></td>
+                                <td id="hyperlink" style="cursor: pointer; color: blue; text-decoration: underline;" onclick="openHyperlink()"></td>
+                            </tr>
+                            <tr>
+                                <td><iframe src="" id="maps" width="400" height="235" allowfullscreen="" loading="lazy"></iframe></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary bg-dark" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div w3-include-html="showComments.html" ></div>
+    <div w3-include-html="editComment.html" ></div>

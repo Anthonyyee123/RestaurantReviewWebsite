@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Introduction to HTML</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" ></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" ></script>
+<script src="https://kit.fontawesome.com/86ec7c1143.js" ></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" >
+<script src="https://www.w3schools.com/lib/w3.js" ></script>
+<script src="js/app.js"></script>
+<script src="js/comments.js"></script>
+<script src="js/restaurants.js"></script>
+<script src="js/checkToken.js"></script>
+<script src="js/logout.js"></script>
+<script src="js/account.js"></script>
+<script src="js/login.js"></script>
+
+</head>
+<style>
+    .navbar
+    {
+        background-color: #5c5c5c;
+    }
+
+    * {
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.side {
+  flex: 20%;
+  background-color: #F2F2F2;
+  padding: 30px;
+}
+
+.side2 {
+  flex: 20%;
+  background-color: #F2F2F2;
+  padding: 30px;
+}
+
+.main {
+  flex: 80%;
+  background-image: url(Images/homepage_background.jpg);
+  background-position: center; 
+  background-repeat: no-repeat;
+  padding: 30px;
+  background-size: cover; 
+}
+.whitebottom{
+  flex: 80%;
+  padding: 30px;
+}
+
+
+.navbar{
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+
+.fakeimg {
+  
+  width: 100%;
+  padding: 20px;
+}
+
+@media screen and (max-width: 700px) {
+  .row, .navbar {
+    flex-direction: column;
+  }
+}
+
+</style>
+<body onload="getRestaurantData(); getUserData()">
+
+  <nav class="navbar navbar-expand-md navbar-dark">
+    <a class="navbar-brand" href="logout-home.html">
+        <img src="Images/Logo.png" width="264" height="55" class="d-inline-block align-top" alt="">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+            <!-- <li class="nav-item active pr-4" id="register">
+                <a href="register.html"><button type="button" class="btn btn-secondary btn-m h-100 align-items-center" style="background-color: transparent;" >New here?<br>Register</button></a>
+            </li>
+            <li class="nav-item pr-4" id="login">
+                <a href="login.html"><button type="button" class="btn btn-secondary btn-m" style="background-color: transparent;" >Welcome back!<br>Log in</button></a>
+            </li> -->
+            <li class="nav-item pr-4" id="logout">
+              <a href="login.html"><button type="button" class="btn btn-secondary btn-m" style="background-color: transparent; height: 100%;" onclick="logoutMe()">Log out</button></a>
+            </li>
+            <li class="nav-item" id="profile">
+                <img src="Images/Profile.png" width="55" height="55" alt=""></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- <div w3-include-html="navBar.html" ></div> -->
+
+    <div class="row">
+        <div class="side">
+            <div class="form-group">
+                <label for="inputState">By Cuisine</label>
+                <select id="inputState" class="form-control">
+                  <option selected>All</option>
+                  <option>Cafe</option>
+                  <option>Chinese</option>
+                  <option>Fast Food</option>
+                  <option>Italian</option>
+                  <option>Japanese</option>
+                  <option>Korean</option>
+                  <option>Western</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="inputState">Ratings</label>
+                <div id="inputState" class="form-control">
+                    <div class  = "row justify-content-center">
+                        <div class = "pr-1">
+                            <img src = "Images/thumbBW.png" width="25px" class="editpop" value="1" onmouseover="rateIt(this)">
+                        </div>
+                        <div class = "pr-1">
+                            <img src = "Images/thumbBW.png" width="25px" class="editpop" value="2" onmouseover="rateIt(this)">
+                        </div>
+                        <div class = "pr-1">
+                            <img src = "Images/thumbBW.png" width="25px" class="editpop" value="3" onmouseover="rateIt(this)">
+                        </div>
+                        <div class = "pr-1">
+                            <img src = "Images/thumbBW.png" width="25px" class="editpop" value="4" onmouseover="rateIt(this)">
+                        </div>
+                        <div class = "pr-1">
+                            <img src = "Images/thumbBW.png" width="25px" class="editpop" value="5" onmouseover="rateIt(this)">
+                        </div>
+                    </div>
+                    </div>
+                    
+
+              </div>
+
+
+              <div class="form-group">
+                <label for="inputState">By Cuisine</label>
+                <select id="inputState" class="form-control">
+                  <option selected>Not Specified</option>
+                  <option>Affordable</option>
+                  <option>Expensive</option>
+
+                </select>
+                <br>
+                <div class = "text-right">
+                    <button type="button" class="btn btn-primary btn-sm ">Filter</button> 
+                </div>
+              </div>
+
+
+
+         
+          <div class="fakeimg" style="height:200px;">
+          </div>
+         
+         
+          <div class="fakeimg" style="height:60px;"></div><br>
+          <div class="fakeimg" style="height:60px;"></div><br>
+          <div class="fakeimg" style="height:60px;"></div>
+        </div>
+        <div class="main">
+           
+          <div class = "row justify-content-center align-items-center h-100">
+            <div class="col-lg-6">
+              <div class="d-flex form-inputs input-group"> <a href="restaurantCards.html"><input class="form-control"  style="width: 500px; cursor: pointer" placeholder="Search for restaurant"> <button type="button" class="btn btn-primary"></a>
+                <i class="fas fa-search"></i>
+              </button> 
+            </div>
+    
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class  = "side2">
+
+
+        </div>
+        <div class = "whitebottom">
+       
+          <div class = "row" id="restaurantsTable">
+      
+     
+</div>
+           
+        
+        </div>
+          
+
+        </div>
+
+        </div>
+
+        </form>
+        </div>
+      </div>
+      <div w3-include-html="restaurantStuffs.html" ></div>
+      
+</body>
+<script>
+  //to bring in other HTML on the fly into this page
+  w3.includeHTML();
+</script>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Introduction to HTML</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" ></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" ></script>
+<script src="https://kit.fontawesome.com/86ec7c1143.js" ></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" >
+</head>
+<style>
+    .navbar
+    {
+        background-color: #5c5c5c;
+    }
+
+    * {
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.side {
+  flex: 20%;
+  background-color: #F2F2F2;
+  padding: 30px;
+}
+
+.main {
+  flex: 80%;
+  background-color: #F2F2F2;
+}
+
+
+
+.fakeimg {
+  
+  width: 100%;
+  padding: 20px;
+}
+
+@media screen and (max-width: 700px) {
+  .row, .navbar {
+    flex-direction: column;
+  }
+}
+
+</style>
+<body>
+
+    <nav class="navbar navbar-expand-md navbar-dark">
+        <a class="navbar-brand" href="#">
+            <img src="Images/Logo.png" width="264" height="55" class="d-inline-block align-top" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item active pr-4" id="nowMenu">
+                    <button type="button" class="btn btn-primary btn-lg" onClick="listNowShowingMovies()">LogOut</button>
+                </li>
+                <li class="nav-item" id="aboutMenu">
+                    <img src="Images/Profile.png" width="55" height="55" data-toggle="modal" data-target="#messageModal" alt="">
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="row">
+        <div class="side">
+            <div class="form-group">
+                <label for="inputState">By Cuisine</label>
+                <select id="inputState" class="form-control">
+                  <option selected>All</option>
+                  <option>Cafe</option>
+                  <option>Chinese</option>
+                  <option>Fast Food</option>
+                  <option>Italian</option>
+                  <option>Japanese</option>
+                  <option>Korean</option>
+                  <option>Western</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="inputState">Ratings</label>
+                <div id="inputState" class="form-control">
+                    <div class  = "row justify-content-center">
+                        <div class = "pr-1">
+                            <img src = "Images/thumbBW.png" width="25px">
+                        </div>
+                        <div class = "pr-1">
+                            <img src = "Images/thumbBW.png" width="25px">
+                        </div>
+                        <div class = "pr-1">
+                            <img src = "Images/thumbBW.png" width="25px">
+                        </div>
+                        <div class = "pr-1">
+                            <img src = "Images/thumbBW.png" width="25px">
+                        </div>
+                        <div class = "pr-1">
+                            <img src = "Images/thumbBW.png" width="25px">
+                        </div>
+                    </div>
+                    </div>
+                    
+
+              </div>
+
+
+              <div class="form-group">
+                <label for="inputState">By Cuisine</label>
+                <select id="inputState" class="form-control">
+                  <option selected>Not Specified</option>
+                  <option>Affordable</option>
+                  <option>Expensive</option>
+
+                </select>
+                <br>
+                <div class = "text-right">
+                    <button type="button" class="btn btn-primary btn-sm ">Filter</button> 
+                </div>
+              </div>
+
+
+
+         
+          <div class="fakeimg" style="height:200px;">
+          </div>
+         
+         
+          <div class="fakeimg" style="height:60px;"></div><br>
+          <div class="fakeimg" style="height:60px;"></div><br>
+          <div class="fakeimg" style="height:60px;"></div>
+        </div>
+        <div class="main">
+            <div class  = "row">
+                <div class = "col-lg-4">
+                    <h1>Profile</h1>
+                    <img src = "Images/Profile.png">
+
+                </div>
+                <div class = "col-lg-4 text-right">
+                    <a href = ""><h1 class = "justify-content-end">Edit Profile</h1></a>
+                </div>
+            </div>
+            <div class="fakeimg" style="height:60px;">
+            </div>
+            <h3  id= "">Name:</h3>
+            <h3  id= "">User ID:</h3>
+            <h3 id = "">Password:</h3>
+            <h3 id = "">Gender:</h3>
+            <h3 id = "">Mobile no:</h3>
+            <h3 id = "">Address:</h3>
+            <h3 id = "">Email:</h3>
+            
+        </div>
+
+        </form>
+        </div>
+      </div>
+
+</body>
+</html>

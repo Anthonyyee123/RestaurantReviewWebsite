@@ -1,0 +1,19 @@
+<html>
+<input id = "txt" onclick="this.value = ''">
+<input id  = "txt2" onclick="this.value = ''">
+<p id = ""></p>
+
+<button onclick = "getval()">Hello</button>
+
+
+<script>
+
+    function getval() {
+        var txt1 = document.getElementById('txt').value;
+        document.getElementById('txt2').value = txt1;
+    }
+
+    
+</script>
+
+</html>

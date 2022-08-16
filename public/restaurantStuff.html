@@ -1,0 +1,487 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Introduction to HTML</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" ></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" ></script>
+<script src="https://kit.fontawesome.com/86ec7c1143.js" ></script>
+<script src = "js/app.js"></script>
+<script src = "js/restaurants.js"></script>
+
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" >
+</head>
+<style>
+    .navbar
+    {
+        background-color: #5c5c5c;
+    }
+
+    * {
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.side {
+  flex: 20%;
+  background-color: #F2F2F2;
+  padding: 30px;
+}
+
+.main {
+  flex: 80%;
+
+
+  padding: 30px;
+ 
+}
+.whitebottom{
+  flex: 80%;
+  padding: 30px;
+}
+
+
+.fakeimg {
+  
+  width: 100%;
+  padding: 20px;
+}
+
+@media screen and (max-width: 700px) {
+  .row, .navbar {
+    flex-direction: column;
+  }
+}
+
+a:link {
+            color: #a8c686;
+            text-decoration: none;
+        }
+        
+        a:visited {
+            text-decoration: none;
+            color: #FFF;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+            color: #FC6;
+        }
+        
+        a:active {
+            text-decoration: none;
+            color: #FC6;
+        }
+        
+        #tab-group h3 {
+            text-align: left;
+        }
+        
+        #tab-group h3 {
+            text-align: left;
+        }
+        
+        .ready {
+            position: relative;
+            margin-bottom: 2em;
+        }
+        
+        #tab-group.ready .tab-header {
+            font-weight: normal;
+            font-size: 13px;
+            text-transform: uppercase;
+            padding: 4px 6px;
+        }
+        
+        .ready .tab-header {
+            position: absolute;
+            top: 0;
+            margin: 0;
+            padding: 0.25em 0.5em;
+            left: 0;
+            background: #b9c6aa;
+            border: 1px solid #999;
+            border-radius: 4px 4px 0 0;
+            z-index: 2;
+            cursor: pointer;
+        }
+        
+        .ready .tab-header.active {
+            background: white;
+            border-bottom-color: white;
+        }
+        
+        .ready .tab-content {
+            position: relative;
+            top: 0;
+            margin: 0;
+            padding: 0.5em;
+            top: 24px;
+            border: 1px solid #999;
+            z-index: 1;
+            background: white;
+            zoom: 1;
+        }
+        
+        .ready .tab-content:after {
+            content: "\0020";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+        
+        .ready #tab-header-2 {
+            left: 10em;
+        }
+        
+        .ready #tab-header-3 {
+            left: 18.5em;
+        }
+        
+        .ready .tab-content {
+            display: none;
+        }
+        
+        .ready .tab-content p {
+            margin: 0;
+            padding: 0 0 1em;
+        }
+        
+        .ready .tab-content.active {
+            display: block;
+        }
+
+
+        
+#wrapper {
+	margin-left: auto;
+    margin-right: auto;
+    display: block;
+    
+	padding: 0px;
+	text-align: left;
+}
+
+
+
+#leftSide {
+	width: 1000px;
+    height: 100%;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	margin: 0px;
+	padding: 0 20px;
+	
+	
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color: #000;
+}
+
+#wrapper #leftSide p #FlashID {
+	float: left;
+	padding: 0px;
+	margin: 10px;
+}
+
+
+#wrapper #ProcessPageMain p {
+	margin-right: 20px;
+	margin-left: 20px;
+}
+#wrapper #ProcessPageMain p #FlashID {
+	float: left;
+	padding-top: 10px;
+	padding-right: 10px;
+	padding-bottom: 25px;
+}
+#leftSidePhoto2 {
+	padding: 0px;
+	float: left;
+	height: 289px;
+	width: 400px;
+}
+#wrapper #PageMain {
+	margin: 10px;
+	padding: 0px;
+	width: 1000px;
+}
+
+
+#wrapper #PageMain p {
+	list-style-image: none;
+	list-style-type: none;
+	margin: 20px;
+	padding: 0px;
+	font-family: "Trebuchet MS", Helvetica, Geneva, Arial, sans-serif;
+	font-size: 100%;
+}
+#wrapper #PageMain ul li {
+	font-family: "Trebuchet MS", Helvetica, Geneva, Arial, sans-serif;
+	font-size: 100%;
+}
+h3 {
+	text-align: center;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 130%;
+	font-weight: bold;
+}
+h2 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 100%;
+	font-weight: bold;
+	padding: 0px;
+}
+
+
+</style>
+
+
+<body onload="getRestaurantData()">
+
+    <nav class="navbar navbar-expand-md navbar-dark">
+        <a class="navbar-brand" href="logout-home.html">
+            <img src="Images/Logo.png" width="264" height="55" class="d-inline-block align-top" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item active pr-4" id="register">
+                    <a href="register.html"><button type="button" class="btn btn-secondary btn-m h-100 align-items-center" style="background-color: transparent;" >New here?<br>Register</button></a>
+                </li>
+                <li class="nav-item pr-4" id="login">
+                    <a href="login.html"><button type="button" class="btn btn-secondary btn-m" style="background-color: transparent;" >Welcome back!<br>Log in</button></a>
+                </li>
+                <li class="nav-item" id="profile">
+                    <img src="Images/Profile.png" width="55" height="55" data-toggle="modal" data-target="#messageModal" alt="">
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="row">
+        <div class="side">
+            <div class="form-group">
+                <label for="inputState">By Cuisine</label>
+                <select id="inputState" class="form-control">
+                  <option selected>All</option>
+                  <option>Cafe</option>
+                  <option>Chinese</option>
+                  <option>Fast Food</option>
+                  <option>Italian</option>
+                  <option>Japanese</option>
+                  <option>Korean</option>
+                  <option>Western</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="inputState">Ratings</label>
+                <div id="inputState" class="form-control">
+                    <div class  = "row justify-content-center">
+                        <div class = "pr-1">
+                            <img src = "Images/thumbBW.png" width="25px">
+                        </div>
+                        <div class = "pr-1">
+                            <img src = "Images/thumbBW.png" width="25px">
+                        </div>
+                        <div class = "pr-1">
+                            <img src = "Images/thumbBW.png" width="25px">
+                        </div>
+                        <div class = "pr-1">
+                            <img src = "Images/thumbBW.png" width="25px">
+                        </div>
+                        <div class = "pr-1">
+                            <img src = "Images/thumbBW.png" width="25px">
+                        </div>
+                    </div>
+                    </div>
+                    
+
+              </div>
+
+
+              <div class="form-group">
+                <label for="inputState">By Cuisine</label>
+                <select id="inputState" class="form-control">
+                  <option selected>Not Specified</option>
+                  <option>Affordable</option>
+                  <option>Expensive</option>
+
+                </select>
+                <br>
+                <div class = "text-right">
+                    <button type="button" class="btn btn-primary btn-sm ">Filter</button> 
+                </div>
+              </div>
+
+
+
+         
+          <div class="fakeimg" style="height:200px;">
+          </div>
+         
+         
+          <div class="fakeimg" style="height:60px;"></div><br>
+          <div class="fakeimg" style="height:60px;"></div><br>
+          <div class="fakeimg" style="height:60px;"></div>
+        </div>
+        <div class="main">
+           
+          <div class = "row justify-content-center ">
+            <div class="col-lg-6">
+              <div class="d-flex form-inputs input-group"> <input class="form-control" type="text" placeholder="search for restaurant"> <button type="button" class="btn btn-primary">
+                <i class="fas fa-search"></i>
+              </button> 
+            </div>
+            
+    
+            </div>
+
+          </div>
+          <h1 class = "text-center pt-3" >Restaurant Information for collins</h1>
+
+          <div class ="row pt-3">
+        <div id="wrapper">
+            <div id="leftSide">
+                <div id="tab-group">
+                    <h3 class="tab-header active" id="tab-header-1">Information</h3>
+                    <div class="tab-content active" id="tab-content-1">
+                        <div class = "row">
+                            <div class = "col-lg-3">
+                                <img src = "Images/thumbBW.png" width="25px">
+                                <img src = "Images/thumbBW.png" width="25px">
+                                <img src = "Images/thumbBW.png" width="25px">
+                                <img src = "Images/thumbBW.png" width="25px">
+                                <img src = "Images/thumbBW.png" width="25px">
+                            </div>
+                            <div class = "col-lg-3 pl-0">
+                                <p id = "">reviews</p>
+                            </div>
+                        </div>
+
+                        <div class = "row">
+                            <div class = "col-lg-6">
+                               <p id="address">Address: dfasfdfasdfsdafsdafdsfsadfdsda<br>sdsdadasdasdasdasdasdasdasds</p>
+                            </div>
+                            <div class = "col-lg-6 pl-0">
+                                <p id = "cuisine">Cuisine:</p>
+                                <p id = "price">price:</p>
+                            </div>
+                        </div>
+
+                        <div class = "row">
+                            <div class = "col-lg-6">
+                               <p id = "openingHours">Opening Hours:</p>
+                            </div>
+                            
+                        </div>
+                        <div class = "row">
+                            <div class = "col-lg-6">
+                               <p id=>Phone:</p>
+                            </div>
+                            
+                        </div>
+                        <div class = "row">
+                            <div class = "col-lg-6">
+                               <p id="hyperlink">Find our more at:</p>
+                            </div>
+                            
+                        </div>
+
+                        <div class = "row">
+                            <div class = "col-lg-6">
+                               <img src = "Images/teaser/collins.png" id = "teaser">
+                            </div>
+
+                            <div class = "col-lg-6 text-right">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15954.838399790871!2d103.86350376977538!3d1.3507722999999978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da17ef58d3ad59%3A0x5a4349a3385ffd2f!2zQ09MTElO4oCZU8KuIEAgTkVY!5e0!3m2!1sen!2ssg!4v1643356255819!5m2!1sen!2ssg" width="400" height="235" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                             </div>
+                            
+                        </div>
+
+                       
+                        
+                        
+                    </div>
+                    <h3 class="tab-header" id="tab-header-2">Review</h3>
+                    <div class="tab-content" id="tab-content-2">
+                        <div class = "row">
+                            <div class = "col-lg-3">
+                                <img src = "Images/thumbBW.png" width="25px">
+                                <img src = "Images/thumbBW.png" width="25px">
+                                <img src = "Images/thumbBW.png" width="25px">
+                                <img src = "Images/thumbBW.png" width="25px">
+                                <img src = "Images/thumbBW.png" width="25px">
+                            </div>
+                            <div class = "col-lg-3 pl-0">
+                                <p id = "">reviews</p>
+                            </div>
+                            <div class = "col-lg-6 pl-0 text-right">
+                                <button type="button" class="btn btn-dark text-white btn-m">Write a review</button>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="tab-header" id="tab-header-3">Write a review</h3>
+                    <div class="tab-content" id="tab-content-3">
+                        <div class = "row">
+                            <div class = "col-lg-4">
+                                <div class="form-group">
+                                    
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="1" placeholder=" Title(30 characters) "></textarea>
+                                  </div>
+                                </form>
+                            </div>
+                            <div class = "col-lg-4 pl-0">
+                                <img src = "Images/thumbBW.png" width="25px">
+                                <img src = "Images/thumbBW.png" width="25px">
+                                <img src = "Images/thumbBW.png" width="25px">
+                                <img src = "Images/thumbBW.png" width="25px">
+                                <img src = "Images/thumbBW.png" width="25px">
+                            </div>
+                            <div class = "col-lg-4 pl-0 text-right">
+                                <button type="button" class="btn btn-dark text-white btn-m">Post</button>
+                            </div>
+                        </div>
+
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="1" placeholder=" random text here "></textarea>
+
+
+
+                    </div>
+                </div>
+    
+                
+            </div>
+           
+        </div>
+    </div>
+
+        </div>
+ 
+    </div>
+
+     
+<script src="js/about.js"></script>
+
+
+</body>
+</html>
