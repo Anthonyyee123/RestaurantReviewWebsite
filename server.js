@@ -43,5 +43,5 @@ app.route('/user/:id').delete(userController.deleteUser); // activate the delete
 app.route('/userValidatePassword/:id_user').get(userController.validateUserPassword);
 app.route('/userValidateId/:id_user').get(userController.validateUserId);
 
-app.listen(8080, "ec2-54-167-183-158.compute-1.amazonaws.com:8080"); // start the nodejs to be listening for incoming request @ port 8080
+app.listen(8080, "ec2-54-167-183-158.compute-1.amazonaws.com"); // start the nodejs to be listening for incoming request @ port 8080
 console.log("web server running @ http://ec2-54-167-183-158.compute-1.amazonaws.com:8080"); // output to console 
